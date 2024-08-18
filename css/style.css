@@ -11,6 +11,21 @@
   transition: all 0.2s linear;
 }
 
+.container {
+  width: 90%;
+  margin: 100px auto;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 3.5rem;
+  color: #333;
+}
+.heading span {
+  color: #0984e3;
+}
+
 html {
   overflow-x: hidden;
   font-size: 62.5%;
@@ -48,6 +63,12 @@ section {
   background: #333;
 }
 
+@keyframes fadIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
 .header {
   position: sticky;
   top: 0;
@@ -283,6 +304,83 @@ section {
     background-color: red;
   }
 }
+.arrivals .box-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-items: center;
+}
+.arrivals .box-container .box {
+  border-radius: 0.5rem;
+  border: 0.2rem solid #333;
+  padding: 1.6rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.arrivals .box-container .box .image {
+  position: relative;
+}
+.arrivals .box-container .box .image img {
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: 15px;
+}
+.arrivals .box-container .box .image .hover-img {
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+}
+.arrivals .box-container .box:hover .image .main-img {
+  opacity: 0;
+}
+.arrivals .box-container .box:hover .image .hover-img {
+  display: block;
+  opacity: 1;
+}
+.arrivals .box-container .box .content {
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+  flex: 1;
+}
+.arrivals .box-container .box .price {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: #0984e3;
+}
+.arrivals .box-container .box .price span {
+  font-size: 1.5rem;
+  color: #666;
+  text-decoration: line-through;
+}
+.arrivals .box-container .box .stars i {
+  color: gold;
+  font-size: 1.4rem;
+}
+@media (max-width: 768px) {
+  .arrivals .box-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .arrivals .box-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 .quick-links {
   display: flex;
   align-items: center;

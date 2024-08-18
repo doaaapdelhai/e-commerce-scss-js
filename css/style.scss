@@ -11,6 +11,10 @@
     text-transform: capitalize;
     transition: all 0.2s linear;
 }
+.container {
+    width: 90%;
+    margin: 100px auto;
+  }
 // varibales
 $blue: #0984e3;
 $black: #333;
@@ -21,6 +25,16 @@ $light-bg: #eee;
 $border: 0.2rem solid $black;
 $box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 
+.heading{
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 3.5rem;
+    color: $black;
+
+    span{
+        color: $blue;
+    }
+}
 //
 @mixin grid($val) {
     display: flex;
@@ -64,6 +78,13 @@ section {
 
     &:hover {
         background: $black;
+    }
+}
+
+@keyframes fadIn {
+    0%{
+        transform: scale(.5);
+        opacity: 0;
     }
 }
 //========= header section start========
@@ -344,7 +365,100 @@ section {
 }
 
 
+// ============arrivals section start======
+.arrivals {
+    .box-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 1rem;
+        justify-items: center; 
+        // background-color: red;
 
+        .box {
+            border-radius: .5rem;
+            border: $border;
+            padding: 1.6rem; 
+            box-shadow: $box-shadow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            background: $white;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            
+
+            .image {
+                position: relative;
+                img {
+                    height: 100px; 
+                    object-fit: cover; 
+                    margin-left: 15px;
+                }
+
+                .hover-img {
+                    cursor: pointer;
+                    display: none;
+                    // width: 100%; 
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    object-fit: cover;
+                    transition: opacity 0.3s ease-in-out;
+                }
+            }
+
+            &:hover .image .main-img {
+                opacity: 0;
+            }
+            
+            &:hover .image .hover-img {
+                display: block; 
+                opacity: 1; 
+            }
+
+            .content {
+                font-size: 1.5rem;
+                color: $black;
+                text-align: center; 
+                flex: 1; 
+            }
+
+            .price {
+                padding: .5rem;
+                font-size: 1.5rem; 
+                color: $blue;
+
+                span {
+                    font-size: 1.5rem;
+                    color: $light-color;
+                    text-decoration: line-through;
+                }
+            }
+
+            .stars i {
+                color: $gold;
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    // media==========
+    @media (max-width: 768px) {
+        .box-container {
+            grid-template-columns: repeat(2, 1fr); 
+        }
+    }
+
+    @media (max-width: 480px) {
+        .box-container {
+            grid-template-columns: 1fr; 
+        }
+    }
+}
+
+// ============arrivals section end========
 
 
 
