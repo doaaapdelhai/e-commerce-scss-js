@@ -81,7 +81,7 @@ section {
     }
 }
 
-@keyframes fadIn {
+@keyframes fadeIn {
     0%{
         transform: scale(.5);
         opacity: 0;
@@ -406,16 +406,21 @@ section {
                     left: 0;
                     object-fit: cover;
                     transition: opacity 0.3s ease-in-out;
+
                 }
             }
 
             &:hover .image .main-img {
                 opacity: 0;
+                animation: fadeIn .2s linear;
+
+                
             }
             
             &:hover .image .hover-img {
                 display: block; 
                 opacity: 1; 
+
             }
 
             .content {
@@ -449,16 +454,196 @@ section {
         .box-container {
             grid-template-columns: repeat(2, 1fr); 
         }
+        .box-container .box {
+            display: flex;
+            flex-direction: column;
+        }
     }
-
+    
     @media (max-width: 480px) {
         .box-container {
             grid-template-columns: 1fr; 
+        }
+        .box-container .box {
+            display: flex;
+            width: 90%;
+            flex-direction: column;
         }
     }
 }
 
 // ============arrivals section end========
+// ============about section start=========
+.about{
+    background-color: #5470c61f;
+    padding: 30px 30px;
+
+    .box{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-between;
+
+        img{
+            width: 450px;
+            height: 300px;
+        }
+        .content{
+            padding: 23px;
+
+            h3{
+                font-size: 20px;
+                color: $black;
+            }
+            p{
+                line-height: 1.7;
+                color: $light-color;
+                font-size: 16px;
+                width: 100%;
+            }
+
+        }
+    }
+}
+// Responsive
+@media (max-width: 768px) {
+    .box {
+      flex-direction: column;
+      align-items: flex-start;
+  
+      img {
+        height: auto;
+        max-width: 100%;
+      }
+  
+      .content {
+        padding: 20px 0 0;
+        text-align: center;
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .box {
+      gap: 15px;
+  
+      .content {
+        h3 {
+          font-size: 18px;
+        }
+  
+        p {
+          font-size: 13px;
+          width: 100%;
+          margin: auto;
+        }
+      }
+    }
+  }
+
+//   Faq section in about
+.faq{
+
+.accordion-container{
+    max-width: 70rem;
+    margin: 0 auto;
+
+    .accordion{
+        background: $white;
+        margin-bottom: 1.5rem;
+        box-shadow: $box-shadow;
+
+        &:last-child{
+            margin-bottom: .5rem;
+        }
+
+        &.active{
+            .accordion-heading{
+                background: $blue;
+
+                i{
+                    transform: rotate(180deg);
+                }
+            }
+            .accordion-content{
+                display: block;
+            }
+        }
+
+        .accordion-heading{
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            justify-content: space-between;
+            background: $black;
+            cursor: pointer;
+
+            h3{
+                font-size: 2rem;
+                color: $white;
+            }
+            i{
+                font-size: 2rem;
+                color: $white;
+            }
+        }
+    }
+
+    .accordion-content{
+        padding: 2rem;
+        font-size: 1.5rem;
+        line-height: 2;
+        color: $light-color;
+        display: none;
+        animation: fadeIn .2s linear;
+    }
+}
+}
+// media
+@media (max-width: 480px) {
+    .accordion-container{
+        text-align: center;
+    }
+}
+
+// ============about section end===========
+// ============ review section in about page start===========
+
+.review{
+
+    .slide{
+        width: 35rem;
+        padding: 3rem;
+        text-align: center;
+        border: $border;
+        box-shadow: $box-shadow;
+        border-radius: $white;
+
+        img{
+            height: 10rem;
+            width: 10rem;
+        }
+        h3{
+            font-size: 2rem;
+            padding: 0.5rem 0;
+            color: $black;
+        }
+        span{
+            color: $blue;
+            font-size: 1.7rem;
+        }
+        p{
+            font-size: 1.5rem;
+            line-height: 2;
+            color: $light-color;
+            padding-top: 1rem;
+            
+        }
+
+    }
+}
+
 
 
 

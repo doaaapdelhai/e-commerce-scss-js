@@ -18,8 +18,28 @@ window.onscroll = () =>{
     searchForm.classList.remove('active');
 };
 
-// swiper
+// faq section in about page
 
+document.querySelectorAll('.accordion-container .accordion').forEach(accordion=>{
+    accordion.onclick = () =>{
+      accordion.classList.toggle('active');
+    }
+});
+
+// 
+
+
+
+
+
+
+
+
+
+
+
+
+// swiper-header page
 var swiper = new Swiper(".home-slider", {
     loop:true,
     grabcursor:true,
@@ -28,4 +48,25 @@ var swiper = new Swiper(".home-slider", {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+  });
+
+
+// swiper-review page
+var swiper = new Swiper(".review-slider", {
+    loop:true,
+    spaceBetween: 20,
+
+    grabcursor:true,
+    
+   breakpoints: {
+        450: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      },
   });
