@@ -1223,9 +1223,160 @@ section {
 
 
 
+.shopping-cart {
+    .box-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); // الافتراضي لسطح المكتب
+      gap: 1.5rem;
+  
+      .box {
+        padding: 1.5rem 3rem;
+        border: $border;
+        background: $white;
+        display: flex;
+        box-shadow: $box-shadow;
+        align-items: center;
+        gap: 2rem;
+        position: relative;
+  
+        .fa-times {
+          position: absolute;
+          top: 1rem;
+          right: 1.5rem;
+          font-size: 2.5rem;
+          color: $light-color;
+          cursor: pointer;
+  
+          &:hover {
+            color: $black;
+            transform: rotate(90deg);
+          }
+        }
+  
+        img {
+          height: 8rem;
+        }
+  
+        .content {
+          h3 {
+            font-size: 1.4rem;
+            color: $black;
+          }
+  
+          form {
+            padding: 1rem 0;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+  
+            span {
+              font-size: 1.4rem;
+              color: $light-color;
+            }
+  
+            input {
+              width: 7rem;
+              padding: 0.5rem 1rem;
+              color: $light-color;
+              background: $light-bg;
+              font-size: 1.5rem;
+            }
+          }
+  
+          .price {
+            font-size: 2rem;
+            color: $blue;
+  
+            span {
+              font-size: 1.5rem;
+              color: $light-color;
+              text-decoration: line-through;
+            }
+          }
+        }
+      }
+    }
+  
+    .cart-total {
+      margin-top: 1.5rem;
+      box-shadow: $box-shadow;
+      background: $white;
+      padding: 1.5rem;
+      border: $border;
+      border-color: 0.5rem;
+      padding-top: 1rem;
+  
+      h3 {
+        padding-top: 1rem;
+        font-size: 1.7rem;
+        color: $black;
+  
+        span {
+          color: $blue;
+        }
+      }
+  
+      a {
+        font-size: 17px;
+      }
+    }
 
 
-
+    @media (max-width: 768px) {
+      .box-container {
+        grid-template-columns: 1fr; 
+      }
+  
+      .box {
+        flex-direction: row; 
+        padding: 1rem;
+      }
+  
+      .cart-total {
+        padding: 1rem;
+        h3 {
+          font-size: 1.5rem;
+        }
+      }
+  
+      .box img {
+        height: 6rem; 
+      }
+  
+      .content h3 {
+        font-size: 1.2rem;
+      }
+  
+      .content form input {
+        width: 5rem;
+        font-size: 1.2rem;
+      }
+  
+      .content .price {
+        font-size: 1.7rem;
+  
+        span {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  
+   
+    @media (max-width: 1024px) {
+      .box-container {
+        grid-template-columns: repeat(1, 1fr);
+      }
+  
+      .box {
+        padding: 1.5rem 2rem;
+      }
+  
+      .cart-total {
+        padding: 1.2rem;
+      }
+    }
+  }
+  
 
 
 
@@ -1424,3 +1575,7 @@ section {
         }
     }
 }
+
+
+// shopping-cart page
+
